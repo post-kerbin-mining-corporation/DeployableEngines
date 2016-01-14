@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
+// The concepts behind this code are credited to BahamutoD's AnimatedEngine module
+// can be found https://github.com/BahamutoD/BDAnimationModules/blob/master/BDAnimationModules/AnimatedEngine.cs
+
 namespace DeployableEngines
 {
     public class ModuleDeployableEngine : PartModule
