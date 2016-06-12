@@ -79,7 +79,6 @@ namespace DeployableEngines
                         {
                             anim.speed = 1f * SpeedMultiplier;
                         }
-                        Debug.Log(anim.speed);
                     }
                 }       
             }
