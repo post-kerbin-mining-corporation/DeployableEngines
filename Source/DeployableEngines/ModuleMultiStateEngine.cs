@@ -40,7 +40,7 @@ namespace DeployableEngines
                 multiController = this.GetComponent<MultiModeEngine>();
                 if (multiController != null)
                 {
-                    
+
                     foreach (AnimationState anim in engineStates)
                     {
                         anim.enabled = true;
@@ -80,7 +80,7 @@ namespace DeployableEngines
                             anim.speed = 1f * SpeedMultiplier;
                         }
                     }
-                }       
+                }
             }
             if (HighLogic.LoadedSceneIsEditor)
             {
@@ -88,7 +88,7 @@ namespace DeployableEngines
                 {
                     foreach (AnimationState anim in engineStates)
                     {
-                        
+
                         anim.enabled = true;
                         if (multiController.runningPrimary)
                         {
@@ -99,7 +99,6 @@ namespace DeployableEngines
                         {
                             anim.speed = 2f * SpeedMultiplier;
                         }
-                        Debug.Log(anim.speed);
                     }
                 }
             }
