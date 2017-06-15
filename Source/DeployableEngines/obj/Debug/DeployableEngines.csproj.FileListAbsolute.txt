@@ -3,3 +3,7 @@ G:\KSP Modding\repositories\DeployableEngines\GameData\Plugins\DeployableEngines
 G:\KSP Modding\repositories\DeployableEngines\Source\DeployableEngines\obj\Debug\DeployableEngines.dll
 G:\KSP Modding\repositories\DeployableEngines\Source\DeployableEngines\obj\Debug\DeployableEngines.pdb
 G:\KSP Modding\repositories\DeployableEngines\Source\DeployableEngines\obj\Debug\DeployableEngines.csprojResolveAssemblyReference.cache
+G:\KSP Modding\repositories\DeployableEngines\DeployableEngines\GameData\Plugins\DeployableEngines.dll
+G:\KSP Modding\repositories\DeployableEngines\DeployableEngines\GameData\Plugins\DeployableEngines.pdb
+G:\KSP Modding\repositories\DeployableEngines\GameData\DeployableEngines\Plugins\DeployableEngines.dll
+G:\KSP Modding\repositories\DeployableEngines\GameData\DeployableEngines\Plugins\DeployableEngines.pdb

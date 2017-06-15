@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using UnityEngine;
+using KSP.Localization;
 
 // The concepts behind this code are credited to BahamutoD's AnimatedEngine module
 // can be found https://github.com/BahamutoD/BDAnimationModules/blob/master/BDAnimationModules/AnimatedEngine.cs
@@ -40,7 +41,7 @@ namespace DeployableEngines
 
 		public void Start()
 		{
-			
+			Events["ToggleAnimationEditor"].guiName = Localizer.Format("#autoLOC_502068");
 			engineStates = SetUpAnimation(EngineAnimationName, this.part);
 		
 			if(HighLogic.LoadedSceneIsFlight)
