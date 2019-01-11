@@ -3,6 +3,9 @@ python:
   - 3.6
 install:
   - pip install awscli boto3 requests
+branches:
+  only:
+    - master
 script:
   - python build_scripts/build.py
 before_deploy:
@@ -29,6 +32,8 @@ deploy:
     acl: public_read
     region: us-east-2
     upload-dir: deployable-engines
+    on:
+      condition: [ $TRAVIS_BRANCH == "master" ] && [ $TRAVIS_PULL_REQUEST == "false" ]
   - deploy:
     provider: releases
     api_key: $GITHUB_OAUTH_TOKEN
@@ -38,4 +43,4 @@ deploy:
     skip_cleanup: true
     on:
       tags: false
-      all_branches: true
+      condition: [ $TRAVIS_BRANCH == "master" ] && [ $TRAVIS_PULL_REQUEST == "false" ]
