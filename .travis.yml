@@ -12,7 +12,7 @@ before_deploy:
   - VERSION=$(cat build_scripts/version.txt)
   - CHANGELOG=$(cat build_scripts/changelog.md)
   - IFS='/'; BASENAME=($TRAVIS_REPO_SLUG); unset IFS;
-  - RELEASE_NAME=${BASENAME[1]} $VERSION
+  - RELEASE_NAME="${BASENAME[1]} $VERSION"
   - echo $VERSION
   - git config --local user.name "ChrisAdderley"
   - git config --local user.email "cadderley@gmail.com"
