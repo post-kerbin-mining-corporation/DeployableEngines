@@ -7,6 +7,7 @@ script:
   - python build_scripts/build.py
 before_deploy:
   - VERSION=$(cat build_scripts/version.txt)
+  - CHANGELOG=$(cat build_scripts/changelog.md)
   - echo $VERSION
   - git config --local user.name "ChrisAdderley"
   - git config --local user.email "cadderley@gmail.com"
@@ -28,13 +29,12 @@ deploy:
     acl: public_read
     region: us-east-2
     upload-dir: deployable-engines
-    on:
-      all_branches: true
   - deploy:
     provider: releases
     api_key: $GITHUB_OAUTH_TOKEN
     file_glob: true
     file: deploy/*
+    body: $CHANGELOG
     skip_cleanup: true
     on:
       tags: false

@@ -27,7 +27,7 @@ def build_nodep_release(version_data, mod_name):
         mod_name (str): name of the mod
     """
     build_path = os.path.join(DEPLOY_PATH,
-        f"{mod_name}_Core_" + "{MAJOR}_{MINOR}_{PATCH}.zip".format(**version_data["VERSION"]))
+        f"{mod_name}_Core_" + "{MAJOR}_{MINOR}_{PATCH}".format(**version_data["VERSION"]))
     shutil.make_archive(build_path, 'zip', os.path.join(BUILD_PATH))
     print(f"> Built {build_path}")
 
@@ -40,7 +40,7 @@ def build_full_release(version_data, mod_name):
         mod_name (str): name of the mod
     """
     build_path = os.path.join(DEPLOY_PATH,
-        f"{mod_name}_" + "{MAJOR}_{MINOR}_{PATCH}.zip".format(**version_data["VERSION"]))
+        f"{mod_name}_" + "{MAJOR}_{MINOR}_{PATCH}".format(**version_data["VERSION"]))
     shutil.make_archive(build_path, 'zip', os.path.join(BUILD_PATH))
     print(f"> Built {build_path}")
 
@@ -65,7 +65,7 @@ def build_extra(name, version_data, build_package):
         version_data (dict): Contents of the .version file
         build_package (bool): whether to create an individual zipfile for the package
     """
-    extra_path = os.path.join(DEPLOY_PATH, f"{name}" + "{MAJOR}_{MINOR}_{PATCH}.zip".format(**version_data["VERSION"]))
+    extra_path = os.path.join(DEPLOY_PATH, f"{name}" + "{MAJOR}_{MINOR}_{PATCH}".format(**version_data["VERSION"]))
     print(f"> Compiling Extra {name}")
     ensure_path(os.path.join(BUILD_PATH,"Extras"))
     shutil.copytree(os.path.join("Extras", name), os.path.join(BUILD_PATH,"Extras", name))
@@ -135,9 +135,12 @@ def bundle(core_release, extras_release, complete_release):
         print(f"Building COMPLETE release package")
         build_full_release(version_data, build_data['mod_name'])
 
-    # Write the version out in text for Travis deploy scripts to take advantage of as env variables set are not persisted
+    # Write the version/changelog out in text for Travis deploy scripts to take advantage of as env variables set are not persisted
     with open(os.path.join("build_scripts", 'version.txt'), "w") as f:
       f.write(get_version(version_data))
+
+    with open(os.path.join("build_scripts", 'changelog.md'), "w") as f:
+      f.write(get_changelog())
 
 if __name__ == "__main__":
     parser = ArgumentParser()
