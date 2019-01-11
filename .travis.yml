@@ -33,7 +33,7 @@ deploy:
     region: us-east-2
     upload-dir: deployable-engines
     on:
-      condition:"[ $TRAVIS_BRANCH == 'master' ] && [ $TRAVIS_PULL_REQUEST == 'false' ]"
+      condition: $TRAVIS_BRANCH = master
   - deploy:
     provider: releases
     api_key: $GITHUB_OAUTH_TOKEN
@@ -43,4 +43,4 @@ deploy:
     skip_cleanup: true
     on:
       tags: false
-      condition: "[ $TRAVIS_BRANCH == 'master' ] && [ $TRAVIS_PULL_REQUEST == 'false' ]"
+      condition: $TRAVIS_BRANCH = master
