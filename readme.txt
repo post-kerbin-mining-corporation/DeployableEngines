@@ -1,8 +1,8 @@
 =========================
-Deployable Engines v0.2.1
+Deployable Engines v1.0.0
 =========================
 
-This is a plugin for Kerbal Space Program which provides small modules useful for animating engine deployment. It does nothing by itself
+This is a plugin for Kerbal Space Program which provides small modules useful for animating engine deployment. It does nothing by itself.
 
 ============
 INSTALLATION
