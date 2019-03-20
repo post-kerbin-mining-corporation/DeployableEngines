@@ -1,0 +1,23 @@
+{
+    "spec_version": "v1.4",
+    "identifier":   "DeployableEngines",
+    "abstract":     "A plugin to manage extending/retracting engine nozzles",
+    "name":         "Deployable Engines Plugin",
+    "$kref":        "#/ckan/github/ChrisAdderley/DeployableEngines",
+    "$vref":        "#/ckan/ksp-avc",
+    "license":      "MIT",
+    "resources": {
+      "homepage": "https://github.com/ChrisAdderley/DeployableEngines/wiki",
+      "repository": "https://github.com/ChrisAdderley/DeployableEngines"
+    },
+    "supports": [
+        { "name": "KerbalAtomics" },
+        { "name": "CryoEngines"   }
+    ],
+    "install": [
+        {
+            "find":       "DeployableEngines",
+            "install_to": "GameData"
+        }
+    ]
+}
