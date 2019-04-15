@@ -14,7 +14,7 @@ namespace DeployableEngines
 	{
 		[KSPField(isPersistant = false)]
 		public string EngineAnimationName;
-		
+
 		[KSPField(isPersistant = false)]
 		public float WaitForAnimation = 0f;
 
@@ -37,13 +37,13 @@ namespace DeployableEngines
 		{
 			engineIsOn = !engineIsOn;
 		}
-		
+
 
 		public void Start()
 		{
 			Events["ToggleAnimationEditor"].guiName = Localizer.Format("#autoLOC_502068");
 			engineStates = SetUpAnimation(EngineAnimationName, this.part);
-		
+
 			if(HighLogic.LoadedSceneIsFlight)
 			{
                 engines = this.GetComponents<ModuleEnginesFX>().ToList();
@@ -54,7 +54,7 @@ namespace DeployableEngines
                     hasMultiEngine = true;
 			}
 
-            
+
 			foreach(AnimationState anim in engineStates)
 			{
 				if (engineIsOn)
@@ -66,11 +66,11 @@ namespace DeployableEngines
 						anim.normalizedTime = 0f;
 				}
 			}
-			
+
 		}
-		
-		
-		
+
+
+
 		public void FixedUpdate()
 		{
 			if(HighLogic.LoadedSceneIsFlight)
@@ -104,8 +104,8 @@ namespace DeployableEngines
                         }
 					}
 				}
-				
-				
+
+
 				if(HighLogic.LoadedSceneIsFlight &&  anim.normalizedTime >= WaitForAnimation && anim.speed > 0)
 				{
                     if (hasMultiEngine)
@@ -124,27 +124,27 @@ namespace DeployableEngines
                         }
                     }
 				}
-				
+
 				if(anim.normalizedTime>=1)
 				{
 					anim.speed = 0;
 					anim.normalizedTime = 1;
 				}
-				
+
 				if(anim.normalizedTime >=1 && !engineIsOn)
 				{
 					anim.speed = -1;
-					
+
 				}
-				
+
 				if(anim.normalizedTime <0)
 				{
 					anim.speed = 0;
 					anim.normalizedTime = 0;
 				}
-				
+
 			}
-			
+
 		}
 
         private bool QueryEngineOn()
@@ -160,9 +160,9 @@ namespace DeployableEngines
         {
             return false;
         }
-		
-		
-		
+
+
+
 		public AnimationState[] SetUpAnimation(string animationName, Part part)  //Thanks Majiir!
         {
             var states = new List<AnimationState>();
@@ -175,7 +175,7 @@ namespace DeployableEngines
                 animationState.wrapMode = WrapMode.ClampForever;
                 animation.Blend(animationName);
                 states.Add(animationState);
-				
+
             }
             return states.ToArray();
         }
