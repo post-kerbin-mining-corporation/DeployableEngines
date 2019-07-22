@@ -5,3 +5,8 @@ tmp/
 deploy/
 build_scripts/version.txt
 build_scripts/changelog.md
+Source/DeployableEngines/.vs/DeployableEngines/v15/Server/sqlite3/storage.ide-wal
+Source/DeployableEngines/.vs/DeployableEngines/v15/Server/sqlite3/storage.ide-shm
+Source/DeployableEngines/.vs/DeployableEngines/v15/Server/sqlite3/storage.ide
+Source/DeployableEngines/.vs/DeployableEngines/v15/Server/sqlite3/db.lock
+Source/DeployableEngines/.vs/DeployableEngines/v15/.suo

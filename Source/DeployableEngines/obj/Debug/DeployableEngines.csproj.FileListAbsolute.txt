@@ -7,3 +7,10 @@ G:\KSP Modding\repositories\DeployableEngines\DeployableEngines\GameData\Plugins
 G:\KSP Modding\repositories\DeployableEngines\DeployableEngines\GameData\Plugins\DeployableEngines.pdb
 G:\KSP Modding\repositories\DeployableEngines\GameData\DeployableEngines\Plugins\DeployableEngines.dll
 G:\KSP Modding\repositories\DeployableEngines\GameData\DeployableEngines\Plugins\DeployableEngines.pdb
+C:\Users\Chris\KSP\Repos\DeployableEngines\GameData\DeployableEngines\Plugins\DeployableEngines.dll
+C:\Users\Chris\KSP\Repos\DeployableEngines\GameData\DeployableEngines\Plugins\DeployableEngines.pdb
+C:\Users\Chris\KSP\Repos\DeployableEngines\Source\DeployableEngines\obj\Debug\DeployableEngines.csprojAssemblyReference.cache
+C:\Users\Chris\KSP\Repos\DeployableEngines\Source\DeployableEngines\obj\Debug\DeployableEngines.csproj.CoreCompileInputs.cache
+C:\Users\Chris\KSP\Repos\DeployableEngines\Source\DeployableEngines\obj\Debug\DeployableEngines.csproj.CopyComplete
+C:\Users\Chris\KSP\Repos\DeployableEngines\Source\DeployableEngines\obj\Debug\DeployableEngines.dll
+C:\Users\Chris\KSP\Repos\DeployableEngines\Source\DeployableEngines\obj\Debug\DeployableEngines.pdb
