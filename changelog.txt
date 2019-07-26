@@ -1,3 +1,10 @@
+v1.1.0
+------
+- Added new ModuleAdvancedLookAtConstraint module
+-- Version of basic FXModuleLookConstraint with the addition of viewing vector setting
+-- Tries (mostly successfully) to ensure a constrained object's  up vector (green transform in unity) matches the up vector of the target object, which resolves problems with almost vertical/vertical gimbal pistons
+-- Same syntax for configs as FXModuleLookConstraint
+
 v1.0.1
 ------
 - KSP 1.7.x
