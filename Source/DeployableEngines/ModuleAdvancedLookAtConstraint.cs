@@ -52,14 +52,14 @@ namespace DeployableEngines
       base.OnLoad(node);
       constraints = new List<LookConstraint>();
       ConfigNode[] cnodes = node.GetNodes("CONSTRAINLOOKFX");
-      Debug.Log(String.Format("Loading {0} constraints", cnodes.Length));
+      Debug.Log(String.Format("[ModuleAdvancedLookAtConstraint]: Loading {0} constraints", cnodes.Length));
 
       for (int i = 0; i < cnodes.Length; i++)
       {
         constraints.Add(new LookConstraint(cnodes[i], this.part));
       }
 
-      Debug.Log(String.Format("Loaded {0} constraints", constraints.Count));
+      Debug.Log(String.Format("[ModuleAdvancedLookAtConstraint]: Loaded {0} constraints", constraints.Count));
     }
     public override void OnStart(StartState state)
     {
