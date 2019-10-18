@@ -7,18 +7,21 @@ using KSP.Localization;
 
 namespace DeployableEngines
 {
-  
+
   public class ModuleAdvancedLookAtConstraint : PartModule
 	{
+
     [System.Serializable]
     public class LookConstraint
     {
       string rotatorsName;
       string targetName;
 
+      // Cached components
       Transform target;
       Transform rotator;
       Part part;
+
       public LookConstraint(ConfigNode node, Part p)
       {
         node.TryGetValue("rotatorsName", ref rotatorsName);
@@ -35,10 +38,8 @@ namespace DeployableEngines
           Vector3 targetPostition = new Vector3(target.position.x,
                                              target.position.y,
                                              target.position.z);
-          //rotator.LookAt(targetPostition);
 
           Vector3 lookPos = target.position - rotator.position;
-          //lookPos.y = 0;
           var rotation = Quaternion.LookRotation(lookPos, target.up);
           rotator.rotation = rotation;
         }
@@ -80,6 +81,7 @@ namespace DeployableEngines
         }
       }
     }
+    
     void LateUpdate()
     {
       if (constraints != null)
@@ -90,5 +92,6 @@ namespace DeployableEngines
         }
       }
     }
+
   }
 }
