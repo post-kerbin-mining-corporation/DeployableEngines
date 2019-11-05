@@ -1,4 +1,4 @@
-v2.0.0
+v1.2.0
 ------
 - KSP 1.8
 - Upgraded to .NET 4.5
