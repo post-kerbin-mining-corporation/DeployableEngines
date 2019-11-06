@@ -1,3 +1,9 @@
+v1.2.0
+------
+- KSP 1.8
+- Upgraded to .NET 4.5
+- Fixed a few logging issues
+
 v1.1.0
 ------
 - Added new ModuleAdvancedLookAtConstraint module
