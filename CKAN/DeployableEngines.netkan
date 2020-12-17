@@ -3,12 +3,12 @@
     "identifier":   "DeployableEngines",
     "abstract":     "A plugin to manage extending/retracting engine nozzles",
     "name":         "Deployable Engines Plugin",
-    "$kref":        "#/ckan/github/ChrisAdderley/DeployableEngines",
+    "$kref":        "#/ckan/github/post-kerbin-mining-corporation/DeployableEngines",
     "$vref":        "#/ckan/ksp-avc",
     "license":      "MIT",
     "resources": {
-      "homepage": "https://github.com/ChrisAdderley/DeployableEngines/wiki",
-      "repository": "https://github.com/ChrisAdderley/DeployableEngines"
+      "homepage": "https://github.com/post-kerbin-mining-corporation/DeployableEngines/wiki",
+      "repository": "https://github.com/post-kerbin-mining-corporation/DeployableEngines"
     },
     "supports": [
         { "name": "KerbalAtomics" },
