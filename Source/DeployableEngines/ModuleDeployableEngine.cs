@@ -71,7 +71,7 @@ namespace DeployableEngines
 
 
 
-		public void FixedUpdate()
+		public void Update()
 		{
 			if(HighLogic.LoadedSceneIsFlight)
 			{

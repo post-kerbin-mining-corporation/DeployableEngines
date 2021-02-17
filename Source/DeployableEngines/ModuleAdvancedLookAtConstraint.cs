@@ -20,12 +20,17 @@ namespace DeployableEngines
       // Cached components
       Transform target;
       Transform rotator;
+      bool constrained = false;
+      Vector3 constraintScale;
       Part part;
 
       public LookConstraint(ConfigNode node, Part p)
       {
         node.TryGetValue("rotatorsName", ref rotatorsName);
         node.TryGetValue("targetName", ref targetName);
+        node.TryGetValue("axisConstrained", ref constrained);
+        node.TryGetValue("axisScales", ref constraintScale);
+
         part = p;
         rotator = p.FindModelTransform(rotatorsName);
         target = p.FindModelTransform(targetName);
@@ -35,16 +40,30 @@ namespace DeployableEngines
       {
         if (rotator != null && target != null)
         {
-          Vector3 targetPostition = new Vector3(target.position.x,
-                                             target.position.y,
-                                             target.position.z);
+          if (!constrained)
+          {
+            Vector3 targetPostition = new Vector3(target.position.x,
+                                               target.position.y,
+                                               target.position.z);
 
-          Vector3 lookPos = target.position - rotator.position;
-          var rotation = Quaternion.LookRotation(lookPos, target.up);
-          rotator.rotation = rotation;
+            Vector3 lookPos = target.position - rotator.position;
+            var rotation = Quaternion.LookRotation(lookPos, target.up);
+            rotator.rotation = rotation;
+          }
+          if (constrained)
+          {
+            Vector3 targetPostition = rotator.parent.InverseTransformPoint(target.position);
+
+            Vector3 rotation = Quaternion.LookRotation(targetPostition - rotator.localPosition).eulerAngles;
+            rotator.localRotation = Quaternion.Euler(
+              constraintScale.x*rotator.localRotation.eulerAngles.x + (1-constraintScale.x) * rotation.x,
+              constraintScale.y * rotator.localRotation.eulerAngles.y + (1 - constraintScale.y) * rotation.y,
+              constraintScale.z * rotator.localRotation.eulerAngles.z + (1 - constraintScale.z) * rotation.z);
+          }
         }
       }
     }
+    
 
     public List<LookConstraint> constraints;
 
