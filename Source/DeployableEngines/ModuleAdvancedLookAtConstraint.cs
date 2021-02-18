@@ -9,7 +9,7 @@ namespace DeployableEngines
 {
 
   public class ModuleAdvancedLookAtConstraint : PartModule
-	{
+  {
 
     [System.Serializable]
     public class LookConstraint
@@ -56,14 +56,14 @@ namespace DeployableEngines
 
             Vector3 rotation = Quaternion.LookRotation(targetPostition - rotator.localPosition).eulerAngles;
             rotator.localRotation = Quaternion.Euler(
-              constraintScale.x*rotator.localRotation.eulerAngles.x + (1-constraintScale.x) * rotation.x,
+              constraintScale.x * rotator.localRotation.eulerAngles.x + (1 - constraintScale.x) * rotation.x,
               constraintScale.y * rotator.localRotation.eulerAngles.y + (1 - constraintScale.y) * rotation.y,
               constraintScale.z * rotator.localRotation.eulerAngles.z + (1 - constraintScale.z) * rotation.z);
           }
         }
       }
     }
-    
+
 
     public List<LookConstraint> constraints;
 
@@ -100,7 +100,7 @@ namespace DeployableEngines
         }
       }
     }
-    
+
     void LateUpdate()
     {
       if (constraints != null)
