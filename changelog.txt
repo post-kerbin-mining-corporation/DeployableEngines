@@ -1,3 +1,8 @@
+v1.3.0
+------
+- ModuleAdvancedLookAtConstraint now supports constraining uniquely on one axis
+- Fixed a visual incompatibility between ModuleDeployableEngine and Waterfall 
+
 v1.2.3
 ------
 - KSP 1.11
