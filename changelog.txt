@@ -1,3 +1,7 @@
+v1.3.1
+------
+- KSP 1.12
+
 v1.3.0
 ------
 - ModuleAdvancedLookAtConstraint now supports constraining uniquely on one axis
