@@ -3,6 +3,7 @@
     "identifier":   "DeployableEngines",
     "abstract":     "A plugin to manage extending/retracting engine nozzles",
     "name":         "Deployable Engines Plugin",
+    "author": "Nertea (Chris Adderley)",
     "$kref":        "#/ckan/github/post-kerbin-mining-corporation/DeployableEngines",
     "$vref":        "#/ckan/ksp-avc",
     "license":      "MIT",
